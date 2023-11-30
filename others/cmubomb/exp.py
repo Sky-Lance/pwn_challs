@@ -1,10 +1,10 @@
 from pwn import *
 
-io = process("./bomb")
-io = gdb.debug("./bomb", 
+io = process("./cmubomb")
+io = gdb.debug("./cmubomb", 
 '''
 set disassembly-flavor intel
-
+b *0x08048e9a
 display/x $eax
 display/x $ebx
 display/x $ecx
@@ -24,11 +24,13 @@ io.sendline("1 2 6 24 120 720")
 io.recvuntil("oing!\n")
 io.sendline("5 t 458")
 io.recvuntil("here!\n")
-io.sendline("9 a")
+io.sendline("9 austinpowers")
 io.recvuntil("his one.\n")
 io.sendline('opekma')
 io.recvuntil("next...\n")
 io.sendline('4 2 6 3 1 5')
+io.recvuntil("rent...\n")
+io.sendline('1001')
 io.interactive()
 
 '''

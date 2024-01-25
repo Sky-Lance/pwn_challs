@@ -1,14 +1,14 @@
 MagnaCTF24
 =======
 
-> Ninipwn
+<h3> Ninipwn </h3>
 
-Format string leak -> Buffer overflow -> Canary overwrite -> Partial overwrite (all XORed)
+> Format string leak -> Buffer overflow -> Canary overwrite -> Partial overwrite (all XORed)
 
-> Protector
+<h3> Protector </h3>
 
-Seccomp based shellcoding challenge using mprotect and orw, had an unintended solution where you could perform orw on generate_directory_tree.py (Not Solved)
+> Seccomp based shellcoding challenge using mprotect and orw, had an unintended solution where you could perform orw on generate_directory_tree.py (Not Solved)
 
-> BuggyPaint
+<h3> BuggyPaint </h3>
 
-Heap-based chall (Not Solved) 
+> Heap-based chall (Not Solved) 

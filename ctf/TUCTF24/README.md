@@ -1,11 +1,10 @@
 TUCTF24
 =======
 
-> Hidden Value
+<h3> Hidden Value </h3>
 
-Simple variable overwrite challenge.
+> Simple variable overwrite challenge.
 
+<h3> Welcome </h3>
 
-> Welcome
-
-Looked like a simple ret2win chall, but was deleted.
+> Looked like a simple ret2win chall, but was deleted.

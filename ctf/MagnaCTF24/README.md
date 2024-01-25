@@ -1,3 +1,6 @@
+MagnaCTF24
+=======
+
 > Ninipwn
 
 Format string leak -> Buffer overflow -> Canary overwrite -> Partial overwrite (all XORed)

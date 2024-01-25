@@ -1,10 +1,18 @@
 Starter bi0s tasks:
 =======
 
-Welcome to the jungle: Basic ROP
+> Welcome to the jungle 
 
-Bytesized: Shellcoding
+Basic ROP
 
-Ghost_it: Buffer overflow > overwrite value in stack
+> Bytesized
 
-Lost_or_won: Buffer overflow > overwrite return address with win function
+Shellcoding
+
+> Ghost_it
+
+Buffer overflow -> overwrite value in stack
+
+> Lost_or_won
+
+Buffer overflow -> overwrite return address with win function

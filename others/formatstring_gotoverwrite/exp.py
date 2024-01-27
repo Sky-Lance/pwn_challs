@@ -22,7 +22,7 @@ sort = sorted(l)
 for i in range(len(sort)):
     for j in range(len(l)):
         if l[j] == sort[i]:
-            t[j] = i
+            t[i] = j
 print(test)
 print(test2)
 print(test3)

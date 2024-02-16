@@ -1,9 +1,9 @@
 from pwn import *
 
-io = process("./next_chall")
-elf = context.binary = ELF('./next_chall')
+io = process("./togvrowreeti")
+elf = context.binary = ELF('./togvrowreeti')
 libc = elf.libc
-# io = gdb.debug("./next_chall", '''
+# io = gdb.debug("./togvrowreeti", '''
 # b *0x080491d3
 # c''')
 context.log_level = 'debug'

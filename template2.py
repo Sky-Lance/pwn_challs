@@ -1,9 +1,9 @@
 from pwn import *
 from icecream import ic
 
-{bindings}
+exe = ELF("./test")
 
-context.binary = {bin_name}
+context.binary = exe
 context.log_level = "debug"
 context.aslr = True
 
@@ -18,9 +18,9 @@ def start(argv=[], *a, **kw):
     if args.REMOTE:
         return remote("localhost", 1337)
     if args.GDB:
-        return gdb.debug({proc_args} + argv, gdbscript=gdbscript, *a, **kw)
+        return gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
     else:
-        return process({proc_args} + argv, *a, **kw)
+        return process([exe.path] + argv, *a, **kw)
 
 gdbscript = '''
 

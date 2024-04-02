@@ -23,7 +23,8 @@ def start(argv=[], *a, **kw):
         return process([exe.path] + argv, *a, **kw)
 
 gdbscript = '''
-b *0x0000000000400967
+b *0x0000000000400938
+# b *0x0000000000400967
 c
 '''.format(**locals())
 

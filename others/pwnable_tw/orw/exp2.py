@@ -1,11 +1,11 @@
 from pwn import *
 
-# io = process("./orw")
-# io = gdb.debug("./orw", '''
-# b *0x08048582
-# c
-# ''')
-io = remote("chall.pwnable.tw", 10001)
+io = process("./orw")
+io = gdb.debug("./orw", '''
+b *0x08048582
+c
+''')
+# io = remote("chall.pwnable.tw", 10001)
 context.log_level = 'debug' 
 context.arch = "amd64"
 payload = asm('''

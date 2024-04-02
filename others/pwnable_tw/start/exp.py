@@ -1,11 +1,11 @@
 from pwn import *
 
 io = process("./start")
-# io = gdb.debug("./start", 
-# '''
-# break *0x08048099
-# continue
-# ''')
+io = gdb.debug("./start", 
+'''
+break *0x08048087
+continue
+''')
 # io = remote("chall.pwnable.tw", 10000)
 context.log_level = 'debug'
 context.arch = 'i386'

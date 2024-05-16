@@ -1,4 +1,4 @@
-BearcatCTF24
+DiceCTF23
 =======
 
 <h3> Bop </h3>

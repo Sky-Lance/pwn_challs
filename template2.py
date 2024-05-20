@@ -39,4 +39,4 @@ def i(): return io.interactive()
 io = start()
 
 
-i()
+io.interactive()

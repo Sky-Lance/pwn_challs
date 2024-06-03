@@ -1,18 +1,10 @@
-Starter bi0s tasks:
+n0psCTF24:
 =======
 
-<h3> Welcome to the Jungle </h3>
+<h3> Raiser </h3>
 
-> Basic ROP.
+> Given a function to get leaks, and given a function to write oob.
 
-<h3> Bytesized </h3>
+<h3> Mudiary </h3>
 
-> Simple execve shellcoding.
-
-<h3> Ghost_it </h3>
-
-> Buffer overflow -> overwrite value in stack
-
-<h3> Lost_or_won </h3>
-
-> Buffer overflow -> overwrite return address with win function
+> Bugs: UAF and double free (not solved)

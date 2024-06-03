@@ -15,4 +15,4 @@ AmateursCTF24
 
 <h3> Reflection </h3>
 
-> 64-bit ret2dlresolve.
+> 64-bit ret2dlresolve. (solved by r0r1)

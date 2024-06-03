@@ -7,15 +7,15 @@ TamuCTF24
 
 <h3> Confinement </h3>
 
-> Leaking flag using shellcode, via exit.
+> Leaking flag using shellcode, via exit. (solved by aldose)
 
 <h3> Five </h3>
 
-> 5-byte shellcode.
+> 5-byte shellcode. (solved by k1r4)
 
 <h3> Janky </h3>
 
-> Smuggling shellcode? (not solved by me)
+> Smuggling shellcode? (solved by r0r1 & spektre)
 
 <h3> Rift </h3>
 
@@ -23,4 +23,4 @@ TamuCTF24
 
 <h3> Shrink </h3>
 
-> There's a function that adds exclamation marks infinitely, which gives buffer overflow, then ret2win (cpp btw).
+> There's a function that adds exclamation marks infinitely, which gives buffer overflow, then ret2win (cpp btw). (solved by r0r1 & spektre)

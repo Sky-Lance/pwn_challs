@@ -11,7 +11,7 @@ b01lersCTF
 
 <h3> Arm-and-leg </h3>
 
-> Format string to get leaks -> ROPchain in arm.
+> Format string to get leaks -> ROPchain in arm. (solved by tourpran)
 
 <h3> Zero-to-hero </h3>
 

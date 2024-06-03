@@ -31,8 +31,8 @@ HTBCyberApocalypse24
 
 <h3> Oracle </h3>
 
-> Using heap to get leaks -> orw on different sockets as the file is not run directly.
+> Using heap to get leaks -> orw on different sockets as the file is not run directly. (solved with help of r0r1 & k1r4)
 
 <h3> Maze of Mist </h3>
 
-> Increasing stack size using command line arguments, so that we can use a kernel sigreturn syscall, which we use to call mprotect on the stack, and execute 32 bit orw shellcode. (Exploit doesn't work local for me.)
+> Increasing stack size using command line arguments, so that we can use a kernel sigreturn syscall, which we use to call mprotect on the stack, and execute 32 bit orw shellcode. (Exploit doesn't work local for me., solved by k1r4)

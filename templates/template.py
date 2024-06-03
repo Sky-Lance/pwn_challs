@@ -1,7 +1,7 @@
 from pwn import *
 from icecream import ic
 
-{bindings}
+elf = {bindings}
 
 context.binary = {bin_name}
 context.log_level = "debug"

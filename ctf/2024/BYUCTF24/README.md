@@ -23,4 +23,4 @@ TJCTF24
 
 <h3> MIPSCode </h3>
 
-> Shellcode in mips, level 1: orw on password file, level 2: execve shellcode without null bytes or whitespace.
+> Shellcode in mips, level 1: orw on password file, level 2: execve shellcode without null bytes or whitespace. (solved by b4tMite)

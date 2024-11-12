@@ -1,4 +1,4 @@
-AngstromCTF24:
+AngstromCTF24
 =======
 
 <h3> Exam </h3>

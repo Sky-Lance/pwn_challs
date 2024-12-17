@@ -1,4 +1,4 @@
-HackthevoteCTF24
+BluehensCTF24
 =======
 
 <h3> Intro </h3>

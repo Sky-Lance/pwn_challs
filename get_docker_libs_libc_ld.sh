@@ -14,7 +14,7 @@ if [ -z "$1" ]; then
 	exit
 fi
 
-cont_id=$(docker run -dit $1)
+cont_id=$(docker run --privileged -dit $1)
 
 ld_path=$(docker exec -it $cont_id sh -c 'ls -1 /lib/**/ld-*.so* /usr/lib/**/ld-*.so* 2>/dev/null | head -n1' | tr -d '\r')
 ld_file=$(echo $ld_path | grep --color=never -Po '(?<=/)[^/]+\.so(\.[^/]+)?')

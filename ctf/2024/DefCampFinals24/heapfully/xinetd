@@ -1,0 +1,18 @@
+# default: off
+# description: An internal xinetd service, listing active services.
+
+service ctf
+{
+	type		= UNLISTED
+	port		= 1337
+	socket_type	= stream
+	protocol	= tcp
+	wait		= no
+	disable		= no
+	server = /bin/sh
+	server_args	= -c cd${IFS}/home/ctf;exec${IFS}./start.sh
+	user = ctf
+	# rlimit_cpu	= 1
+	flags       = REUSE
+	# per_source	= 10
+}

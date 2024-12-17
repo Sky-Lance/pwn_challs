@@ -37,6 +37,7 @@ def rl(): return io.recvline()
 def uu64(a): return u64(re(a).ljust(8, b"\x00"))
 def gad(a, b): return ROP(a).find_gadget(b)[0]
 def qgad(a, b): return ROP(a).find_gadget([f"pop " + b, "ret"])[0]
+def binsh(a): return next(a.search(b"/bin/sh\x00"))
 def i(): return io.interactive()
 
 io = start()

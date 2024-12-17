@@ -15,7 +15,7 @@ VSCTF24:
 
 <h3> Cosmic ray v3 - revenge </h3>
 
-> Revenge challenge, flip the syscall so it calls read onto stack, ret2main get infinite flips. Then, flip the size bit to make bigger overflow. Finally, flip pop rbp to pop rdi, and simple ret2libc. (not solved)
+> Revenge challenge, flip the syscall so it calls read onto stack, ret2main get infinite flips. Then, flip the size bit to make bigger overflow. Finally, flip pop rbp to pop rdi, and simple ret2libc. (not solved during the ctf)
 
 <h3> Shell service </h3>
 

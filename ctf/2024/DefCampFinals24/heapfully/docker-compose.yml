@@ -1,0 +1,11 @@
+services: 
+  heapfully:
+    build: ./ 
+    ports:
+      - "3001:1337"
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+          max-file: "10"
+          max-size: "1G"

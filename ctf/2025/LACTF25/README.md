@@ -19,7 +19,7 @@ LACTF25
 
 <h3> library </h3>
 
-> Array oob on allocating heap chunks allows you to have a type confusion with the book and settings struct, allowing you to read more than 0x10 bytes by editing the size of next chunk (which affects settings' size variable). Use this to read /proc/self/maps to get leaks and then House of Einheirjar -> FSOP
+> Array oob on allocating heap chunks allows you to have a type confusion with the book and settings struct, allowing you to read more than 0x10 bytes by editing the size of next chunk (which affects settings' size variable). Use this to read /proc/self/maps to get leaks and then House of Einherjar -> FSOP
 
 <h3> unsafe </h3>
 

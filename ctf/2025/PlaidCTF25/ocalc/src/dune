@@ -1,0 +1,18 @@
+(executable
+ (name ocalc)
+ (libraries base stdio ctypes integers)
+ (flags (:standard))
+ (ctypes
+  (external_library_name gmp)
+  (build_flags_resolver pkg_config)
+  (headers
+   (include "gmp.h"))
+  (type_description
+   (instance Type)
+   (functor Type_description))
+  (function_description
+   (concurrency sequential)
+   (instance Functions)
+   (functor Function_description))
+  (generated_types Types_generated)
+  (generated_entry_point Gmp_generated)))
